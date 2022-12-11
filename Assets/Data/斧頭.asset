@@ -14,8 +14,26 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefabWeapon: {fileID: 2812084566472997524, guid: 327a278c42c82c641b9ab2a356b074d5,
     type: 3}
-  intervalSpawn: 3
-  attack: 50
-  weaponObjects:
-  - speed: {x: 0, y: 700}
-    pointSpawn: {x: 1, y: 0.5, z: 0}
+  withCharacterDircetion: 0
+  weaponLevelDatas:
+  - intervalSpawn: 3
+    attack: 50
+    weaponObjects:
+    - speed: {x: 0, y: 450}
+      pointSpawn: {x: 0.6, y: 0.8, z: 0}
+  - intervalSpawn: 2
+    attack: 80
+    weaponObjects:
+    - speed: {x: -10, y: 450}
+      pointSpawn: {x: 0.3, y: 0.8, z: 0}
+    - speed: {x: 10, y: 450}
+      pointSpawn: {x: 1.2, y: 0.8, z: 0}
+  - intervalSpawn: 1
+    attack: 100
+    weaponObjects:
+    - speed: {x: -10, y: 480}
+      pointSpawn: {x: -0.1, y: 0.8, z: 0}
+    - speed: {x: 0, y: 460}
+      pointSpawn: {x: 0.6, y: 0.8, z: 0}
+    - speed: {x: 10, y: 480}
+      pointSpawn: {x: 1.3, y: 0.8, z: 0}
