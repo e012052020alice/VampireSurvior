@@ -12,6 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f74d8574e5ae244ea2e5db70422c1ed, type: 3}
   m_Name: "\u65A7\u982D"
   m_EditorClassIdentifier: 
+  prefabWeapon: {fileID: 2812084566472997524, guid: 327a278c42c82c641b9ab2a356b074d5,
+    type: 3}
+  intervalSpawn: 3
   attack: 50
-  speed: {x: 5, y: 50}
-  pointSpawn: {x: 0, y: 0.5, z: 0}
+  weaponObjects:
+  - speed: {x: 0, y: 700}
+    pointSpawn: {x: 1, y: 0.5, z: 0}

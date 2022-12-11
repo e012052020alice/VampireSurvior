@@ -11,6 +11,10 @@ namespace ChimmyBear
     [CreateAssetMenu(menuName = "ChimmyBear/Weapon Data",fileName = "New Weapon Data")]
     public class WeaponData : ScriptableObject
     {
+        [Header("武器物件")]
+        public GameObject prefabWeapon;
+        [Header("武器生成間閣"), Range(0, 10)]
+        public float intervalSpawn = 3;
         [Header("武器攻擊力"), Range(0, 10000)]
         public float attack;
         [Header("武器物件數量、速度與位置")]
