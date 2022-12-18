@@ -37,7 +37,11 @@ namespace ChimmyBear
                 Vector2 speedMove;
                 if (weaponData.withCharacterDircetion) speedMove = transform.TransformDirection(weaponObject[i].speed);
                 else speedMove = weaponObject[i].speed;
+                
+                //生成物件，取得元件< 2D 鋼體>()添加推力(武器資料的武器速度)
                 tempWeapon.GetComponent<Rigidbody2D>().AddForce(speedMove);
+
+                tempWeapon.AddComponent<WeaponAttack>().attack = weaponLevel.attack;
             }
             
         }
