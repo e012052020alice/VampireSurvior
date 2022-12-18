@@ -490,7 +490,7 @@ MonoBehaviour:
   layerDamage:
     serializedVersion: 2
     m_Bits: 8
-  timeInvisiable: 5
+  timeInvisiable: 0.3
 --- !u!1 &263510856
 GameObject:
   m_ObjectHideFlags: 0
