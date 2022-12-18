@@ -35,7 +35,7 @@ namespace ChimmyBear
                 GameObject tempWeapon = Instantiate(weaponData.prefabWeapon, transform.position + transform.TransformDirection(weaponObject[i].pointSpawn), Quaternion.identity);
 
                 Vector2 speedMove;
-                if (weaponData.withCharacterDircetion) speedMove = transform.right * weaponObject[i].speed;
+                if (weaponData.withCharacterDircetion) speedMove = transform.TransformDirection(weaponObject[i].speed);
                 else speedMove = weaponObject[i].speed;
                 tempWeapon.GetComponent<Rigidbody2D>().AddForce(speedMove);
             }
