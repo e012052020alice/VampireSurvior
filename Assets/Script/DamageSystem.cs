@@ -1,4 +1,5 @@
 using UnityEngine;
+using TMPro;
 
 namespace ChimmyBear
 {
@@ -21,6 +22,10 @@ namespace ChimmyBear
         private LayerMask layerDamage;
         [SerializeField, Header("受傷無敵時間"), Range(0, 1)]
         private float timeInvisiable = 0.2f;
+        [SerializeField, Header("經驗值"), Range(0, 5000)]
+        private float exp;
+        [SerializeField]
+        private GameObject prefabExp;
 
         private float timer;
         private bool isDamage;
@@ -49,17 +54,36 @@ namespace ChimmyBear
             {
                 if (!isDamage)
                 {
+                    float attack = hit.GetComponent<WeaponAttack>().attack;
+                    hp -= attack;
+                    if (hp <= 0) Dead();
                     //print(hit.name);
                     isDamage = true;
-                    Instantiate(
+                    GameObject tempDamge=Instantiate(
                     prefabDamage,
                     transform.position + transform.TransformDirection(offestDamagePrefab),
                     Quaternion.identity);
+                    tempDamge.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = attack.ToString();
                 }
                 
 
             }
         }
+        ///<summary>
+        ///死亡
+        ///</summary>
+        private void Dead()
+        {
+            GameObject tempExp = Instantiate(prefabExp, transform.position, Quaternion.identity);
+            tempExp.GetComponent<ExpManager>().exp = exp;
+            
+            Destroy(gameObject);
+
+        }
+        
+
+
+
         ///<summary>
         ///無敵時間計時器
         ///</summary>
