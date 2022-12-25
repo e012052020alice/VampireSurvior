@@ -1,9 +1,9 @@
-using UnityEngine;
+ï»¿using UnityEngine;
 
 namespace ChimmyBear
 {
     /// <summary>
-    /// ªZ¾¹§ğÀ»¤O:Àx¦sªZ¾¹§ğÀ»¤O»P¹Bºâ¯B°Ê¼Æ­È
+    /// æ­¦å™¨æ”»æ“ŠåŠ›:å„²å­˜æ­¦å™¨æ”»æ“ŠåŠ›èˆ‡é‹ç®—æµ®å‹•æ•¸å€¼
     /// </summary>
     public class WeaponAttack : MonoBehaviour
     {

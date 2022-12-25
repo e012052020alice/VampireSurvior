@@ -1,8 +1,8 @@
-using UnityEngine;
+ï»¿using UnityEngine;
 namespace ChimmyBear
 {
     /// <summary>
-    ///¸gÅç­ÈºŞ²z¾¹
+    ///ç¶“é©—å€¼ç®¡ç†å™¨
     /// </summary>
     public class ExpManager : MonoBehaviour
     {

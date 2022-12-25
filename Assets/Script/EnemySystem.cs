@@ -1,18 +1,18 @@
-using UnityEngine;
+ï»¿using UnityEngine;
 
 namespace ChimmyBear
 {
     /// <summary>
-    /// ¼Ä¤H¨t²Î:°lÂÜª±®a
+    /// æ•µäººç³»çµ±:è¿½è¹¤ç©å®¶
     /// </summary>
     public class EnemySystem : MonoBehaviour
     {
-        [SerializeField, Header("²¾°Ê³t«×"),Range(0, 10)]
+        [SerializeField, Header("ç§»å‹•é€Ÿåº¦"),Range(0, 10)]
         private float speed = 3.5f;
-        [SerializeField, Header("°±¤î¶ZÂ÷"), Range(0, 10)]
+        [SerializeField, Header("åœæ­¢è·é›¢"), Range(0, 10)]
         private float stopDistance = 1.5f;
 
-        private string nameTarget = "ÅI¤M©Ç";
+        private string nameTarget = "é®åˆ€æ€ª";
         private Transform traTarget;
         private void OnDrawGizmos()
         {
@@ -29,7 +29,7 @@ namespace ChimmyBear
             Track();
         }
         ///<summary>
-        ///°lÂÜ
+        ///è¿½è¹¤
         ///</summary>
         private void Track()
         {
@@ -42,10 +42,10 @@ namespace ChimmyBear
             transform.position = posCurrent;
         }
         ///<summary>
-        ///Â½­±
+        ///ç¿»é¢
         ///</summary>
-        ///<param name="xCurrent">¦¹ª«¥óªºX</param>
-        ///<param name="Target">¦¹¥Ø¼Ğª«¥óªºX</param>
+        ///<param name="xCurrent">æ­¤ç‰©ä»¶çš„X</param>
+        ///<param name="Target">æ­¤ç›®æ¨™ç‰©ä»¶çš„X</param>
         private void Flip(float xCurrent,float xTarget)
         {
             float annle = xCurrent > xTarget ? 0 : 180;

@@ -1,28 +1,28 @@
-using UnityEngine;
+ï»¿using UnityEngine;
 using TMPro;
 
 namespace ChimmyBear
 {
     /// <summary>
-    /// ¨ü¶Ë¨t²Î
+    /// å—å‚·ç³»çµ±
     /// </summary>
     public class DamageSystem : MonoBehaviour
     {
-        [SerializeField, Header("¦å¶q"), Range(0, 5000)]
+        [SerializeField, Header("è¡€é‡"), Range(0, 5000)]
         private float hp;
-        [SerializeField, Header("¨ü¶Ë¥b®|"), Range(0, 50)]
+        [SerializeField, Header("å—å‚·åŠå¾‘"), Range(0, 50)]
         private float radiusDamage;
-        [SerializeField, Header("¨ü¶Ë¦ì²¾")]
+        [SerializeField, Header("å—å‚·ä½ç§»")]
         private Vector2 offsetDamage;
-        [SerializeField, Header("¶Ë®`­Èª«¥ó")]
+        [SerializeField, Header("å‚·å®³å€¼ç‰©ä»¶")]
         private GameObject prefabDamage;
-        [SerializeField, Header("¶Ë®`­Èª«¥ó¦ì²¾")]
+        [SerializeField, Header("å‚·å®³å€¼ç‰©ä»¶ä½ç§»")]
         private Vector2 offestDamagePrefab;
-        [SerializeField, Header("¨ü¶Ë¹Ï¼h")]
+        [SerializeField, Header("å—å‚·åœ–å±¤")]
         private LayerMask layerDamage;
-        [SerializeField, Header("¨ü¶ËµL¼Ä®É¶¡"), Range(0, 1)]
+        [SerializeField, Header("å—å‚·ç„¡æ•µæ™‚é–“"), Range(0, 1)]
         private float timeInvisiable = 0.2f;
-        [SerializeField, Header("¸gÅç­È"), Range(0, 5000)]
+        [SerializeField, Header("ç¶“é©—å€¼"), Range(0, 5000)]
         private float exp;
         [SerializeField]
         private GameObject prefabExp;
@@ -42,7 +42,7 @@ namespace ChimmyBear
             InvisiableTimer();
         }
         ///<summary>
-        ///³y¦¨¶Ë®`§P©w
+        ///é€ æˆå‚·å®³åˆ¤å®š
         ///</summary>
         private void GetDamage()
         {
@@ -70,7 +70,7 @@ namespace ChimmyBear
             }
         }
         ///<summary>
-        ///¦º¤`
+        ///æ­»äº¡
         ///</summary>
         private void Dead()
         {
@@ -85,7 +85,7 @@ namespace ChimmyBear
 
 
         ///<summary>
-        ///µL¼Ä®É¶¡­p®É¾¹
+        ///ç„¡æ•µæ™‚é–“è¨ˆæ™‚å™¨
         ///</summary>
         private void InvisiableTimer()
         {
