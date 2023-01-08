@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace ChimmyBear
 {
-
+    [DefaultExecutionOrder(200)]
     /// <summary>
     /// 武器系統
     /// </summary>
@@ -20,6 +20,7 @@ namespace ChimmyBear
         {
             //SpawnWeapon();
             InvokeRepeating("SpawnWeapon", 0, weaponLevel.intervalSpawn);
+            LevelManager.instance.onLevelup += WhenPlayerLevelUp;
         }
         /// <summary>
         /// 生成武器
@@ -46,6 +47,17 @@ namespace ChimmyBear
             
         }
 
+        ///<summary>
+        ///當玩家升級時
+        ///</summary>
+        private void WhenPlayerLevelUp()
+        {
+            if (this)
+            {
+                CancelInvoke();
+                enabled = false;
+            }
+        }
     }
 
 

@@ -4,6 +4,7 @@ using UnityEngine.UI;
 
 namespace ChimmyBear
 {
+    [DefaultExecutionOrder(100)]
     /// <summary>
     ///等級管理器
     /// </summary>
@@ -23,10 +24,18 @@ namespace ChimmyBear
 
         [SerializeField]
         private float[] expNeeds;
+
+        /// <summary>
+        ///升級技能選取介面
+        /// </summary>
+        private Animator aniUpdateLevelAndChooseSkill;
         private void Awake()
         {
+            instance = this;
+
             imgExp = GameObject.Find("圖片經驗值").GetComponent<Image>();
             textLv = GameObject.Find("文字等級").GetComponent<TextMeshProUGUI>();
+            aniUpdateLevelAndChooseSkill = GameObject.Find("升級技能選取介面").GetComponent<Animator>();
         }
 
         private void OnDrawGizmos()
@@ -38,6 +47,10 @@ namespace ChimmyBear
         {
             GetExpObject();
         }
+
+        public static LevelManager instance;
+        public delegate void LevelUP();//委派
+        public event LevelUP onLevelup;//事件
 
         [ContextMenu("更新經驗值需求表")]
         private void UpdateExpNeeds()
@@ -83,13 +96,22 @@ namespace ChimmyBear
                 if (expCurrent >= expNeed)
                 {
                     expCurrent -= expNeed;
-                    lv++;
-                    textLv.text = "Lv" + lv;
+                    UpdateLevel();
                 }
                 imgExp.fillAmount = expCurrent / expNeed;
 
                 Destroy(hit.gameObject);
             }
+        }
+        ///<summary>
+        ///升級
+        ///</summary>
+        private void UpdateLevel()
+        {
+            lv++;//升級
+            textLv.text = "Lv" + lv;//更新等級介面
+            aniUpdateLevelAndChooseSkill.enabled = true;//啟動升級介面動畫
+            onLevelup();//觸發事件
         }
     }
 }
